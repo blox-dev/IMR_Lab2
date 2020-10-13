@@ -33,26 +33,33 @@ public class lineDrawingScript : MonoBehaviour
     private int lindex = 0;
     private void DestinationMarkerHover(object sender, DestinationMarkerEventArgs e)
     {
-        if (e.target.name == "blackboard")
+
+        GameObject chalk = GameObject.Find("chalk");
+        chalk.GetComponent<VRTK_InteractableObject>().IsGrabbed();
+        if (chalk.GetComponent<VRTK_InteractableObject>().IsGrabbed())
         {
-            if (last_pos == Vector3.zero)
-                last_pos = e.destinationPosition;
-            else
+            if (e.target.name == "blackboard")
             {
-                GameObject lineObject = new GameObject("Line" + lindex++);
-                lineObject.AddComponent<LineRenderer>();
+                if (last_pos == Vector3.zero)
+                    last_pos = e.destinationPosition;
+                else
+                {
+                    GameObject lineObject = new GameObject("Line" + lindex++);
+                    lineObject.AddComponent<LineRenderer>();
 
-                LineRenderer line = lineObject.GetComponent<LineRenderer>();
+                    LineRenderer line = lineObject.GetComponent<LineRenderer>();
 
-                line.positionCount = 2;
-                line.SetPosition(0, last_pos);
-                line.SetPosition(1, e.destinationPosition);
-                line.startWidth = 0.1f;
-                line.endWidth = 0.1f;
-                line.useWorldSpace = true;
-                last_pos = e.destinationPosition;
+                    line.positionCount = 2;
+                    line.SetPosition(0, last_pos);
+                    line.SetPosition(1, e.destinationPosition);
+                    line.startWidth = 0.1f;
+                    line.endWidth = 0.1f;
+                    line.useWorldSpace = true;
+                    last_pos = e.destinationPosition;
+                }
             }
         }
+        
     }
     void OnApplicationQuit()
     {
