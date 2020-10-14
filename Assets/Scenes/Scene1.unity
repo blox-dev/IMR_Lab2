@@ -576,7 +576,7 @@ MonoBehaviour:
   invalidCollisionColor: {r: 1, g: 0, b: 0, a: 1}
   tracerVisibility: 0
   cursorVisibility: 0
-  maximumLength: 100
+  maximumLength: 3
   scaleFactor: 0.002
   cursorScaleMultiplier: 25
   cursorMatchTargetRotation: 0
@@ -957,7 +957,7 @@ MonoBehaviour:
   invalidCollisionColor: {r: 1, g: 0, b: 0, a: 1}
   tracerVisibility: 2
   cursorVisibility: 2
-  maximumLength: 1
+  maximumLength: 3
   scaleFactor: 0.002
   cursorScaleMultiplier: 25
   cursorMatchTargetRotation: 0
