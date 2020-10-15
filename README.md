@@ -1,6 +1,6 @@
 # IMR_Lab2
 
-## VRTK painting with Chuck 2
+## VRTK painting
 
 Liniile se deseneaza doar daca jucatorul are creta in mana, este suficient de aproape de tabla si apasa tasta Q.
 
